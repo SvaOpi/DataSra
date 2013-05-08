@@ -43,5 +43,13 @@ public class UsuarioServicio {
         }
         return entity;
     }
+    public Usuario buscarUsuarioPorCedula(Long cedula, EntityManager em) {
+        UsuarioDAO dao = (UsuarioDAO) FactoryDAO.crear(Dao.USUARIO);
+        Usuario entity = dao.buscarPorCedula(cedula, em);
+        if (entity == null) {
+            return null;
+        }
+        return entity;
+    }
 
 }

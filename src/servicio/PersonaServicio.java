@@ -16,7 +16,7 @@ public class PersonaServicio {
     }
     public Persona buscarPorCedula(Long cedula, EntityManager em){
         PersonaDAO dao = (PersonaDAO) FactoryDAO.crear(Dao.PERSONA); 
-        Persona entity = dao.buscarPorCorreo(cedula, em);
+        Persona entity = dao.buscarPorCedula(cedula, em);
         if (entity == null) {return null;}
         return entity;
     }

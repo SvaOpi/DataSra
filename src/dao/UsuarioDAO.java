@@ -28,4 +28,25 @@ public class UsuarioDAO extends Dao{
         }
     }
     
+    public Usuario buscarPorCedula(Long cedula,EntityManager em){
+        try{
+            Query q = (Query) em.createQuery("select u from Usuario u where u.cedula = :cedula");
+            q.setParameter("cedula", cedula);
+            Usuario u = (Usuario) q.getSingleResult();
+            return u;
+        }catch(NoResultException e){
+            return null;
+        }
+    }
+    
+    public Usuario buscarPorRol(String rol,EntityManager em){
+        try{
+            Query q = (Query) em.createQuery("select u from Usuario u where u.rol = :rol");
+            q.setParameter("rol", rol);
+            Usuario u = (Usuario) q.getSingleResult();
+            return u;
+        }catch(NoResultException e){
+            return null;
+        }
+    }
 }

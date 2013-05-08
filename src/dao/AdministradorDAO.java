@@ -17,10 +17,10 @@ public class AdministradorDAO extends Dao{
         }
     }
     
-    public Administrador buscarPorCorreo(String correo, EntityManager em){
+    public Administrador buscarPorCedula(Long cedula, EntityManager em){
         try{
-            Query q = (Query) em.createQuery("select a from Administrador a where a.correo = :correo");
-            q.setParameter("correo", correo);
+            Query q = (Query) em.createQuery("select a from Administrador a where a.cedula = :cedula");
+            q.setParameter("cedula", cedula);
             Administrador a =(Administrador) q.getSingleResult();
             return a;
         }catch(NoResultException e){

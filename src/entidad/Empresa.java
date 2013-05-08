@@ -24,7 +24,7 @@ public class Empresa {
     @Column(unique=true)
     private Long nit;
     
-    @OneToMany(cascade= CascadeType.ALL, mappedBy="usuario", orphanRemoval=true)
+    @OneToMany(cascade= CascadeType.ALL, mappedBy="empresa", orphanRemoval=true)
     private Collection<Usuario> usuarios = new ArrayList<Usuario>();
 
     public Collection<Usuario> getUsuarios() {

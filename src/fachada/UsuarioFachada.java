@@ -47,6 +47,19 @@ public class UsuarioFachada extends Fachada {
         }
     }
 
+    public Usuario buscarUsuarioPorCedula(Long cedula) {
+        Usuario usuarioVO = null;
+        try {
+            abrirConexion();
+            usuarioVO = usuarioServicio.buscarUsuarioPorCedula(cedula, em);
+            et.commit();
+        } catch (Exception e) {
+            hacerRollback();
+        } finally {
+            cerrarConexion();
+            return usuarioVO;
+        }
+    }
     public String actualizarUsuario(Usuario vo) {
         String resultado = "";
         try {

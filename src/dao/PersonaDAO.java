@@ -6,7 +6,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 public class PersonaDAO extends Dao{
-    public Persona buscarPorCorreo(Long cedula,EntityManager em){
+    public Persona buscarPorCedula(Long cedula,EntityManager em){
         try{
             Query q = (Query) em.createQuery("select p from Persona p where p.cedula = :cedula");
             q.setParameter("cedula", cedula);

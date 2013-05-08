@@ -8,7 +8,9 @@ import javax.persistence.Table;
 @Table(name = "usuario")
 public class Usuario extends Persona{
     
-    private String rol;    
+    private String rol;   
+    
+    private boolean permisoLectura;
     
     @ManyToOne
     private Empresa empresa;     
@@ -21,6 +23,14 @@ public class Usuario extends Persona{
         this.setCorreo(entity.getCorreo());
         rol=entity.getRol();
         empresa=entity.getEmpresa();       
+    }
+
+    public boolean isPermisoLectura() {
+        return permisoLectura;
+    }
+
+    public void setPermisoLectura(boolean permisoLectura) {
+        this.permisoLectura = permisoLectura;
     }
 
     public String getRol() {

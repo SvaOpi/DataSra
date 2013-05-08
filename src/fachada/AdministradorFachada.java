@@ -14,7 +14,7 @@ public class AdministradorFachada extends Fachada{
         String resultado = "";
         try{
             abrirConexion();
-            if(administradorServicio.buscarAdministradorPorCorreo(vo.getCorreo(), em)!=null){
+            if(administradorServicio.buscarAdministradorPorCedula(vo.getCedula(), em)!=null){
                 et.commit();
                 resultado ="Correo ya registrado";
             }else{
@@ -33,11 +33,11 @@ public class AdministradorFachada extends Fachada{
         
     }
     
-    public Administrador buscarAdministradorPorCorreo(String correo){
+    public Administrador buscarAdministradorPorCorreo(Long cedula){
         Administrador administradorVO = null;
         try{
             abrirConexion();
-            administradorVO = administradorServicio.buscarAdministradorPorCorreo(correo, em);
+            administradorVO = administradorServicio.buscarAdministradorPorCedula(cedula, em);
             et.commit();
         }catch(Exception e){
             hacerRollback();
@@ -51,7 +51,7 @@ public class AdministradorFachada extends Fachada{
         String resultado = "";
         try{
             abrirConexion();
-            if(administradorServicio.buscarAdministradorPorCorreo(vo.getCorreo(), em)==null){
+            if(administradorServicio.buscarAdministradorPorCedula(vo.getCedula(), em)==null){
                 et.commit();
                 resultado ="Administrador no encontrado";  
             }else{
@@ -72,7 +72,7 @@ public class AdministradorFachada extends Fachada{
         String resultado = "";
         try{
             abrirConexion();
-            if(administradorServicio.buscarAdministradorPorCorreo(vo.getCorreo(), em)==null){
+            if(administradorServicio.buscarAdministradorPorCedula(vo.getCedula(), em)==null){
                 et.commit();
                 resultado ="Administrador no encontrado"; 
             }

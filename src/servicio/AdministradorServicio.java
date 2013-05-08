@@ -28,9 +28,9 @@ public class AdministradorServicio {
         if (entity == null) {return null;}
         return entity;
     }
-    public Administrador buscarAdministradorPorCorreo(String correo, EntityManager em){
+    public Administrador buscarAdministradorPorCedula(Long cedula, EntityManager em){
         AdministradorDAO dao = (AdministradorDAO) FactoryDAO.crear(Dao.ADMINISTRADOR);        
-        Administrador entity = dao.buscarPorCorreo(correo, em);
+        Administrador entity = dao.buscarPorCedula(cedula, em);
         if (entity == null) {return null;}
         return entity;
     }
