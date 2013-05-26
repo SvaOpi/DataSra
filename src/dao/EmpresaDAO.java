@@ -24,5 +24,15 @@ public class EmpresaDAO extends Dao{
             return null;
         }
     }
+
+    public Empresa buscarPorId(long id, EntityManager em) {
+        try{
+            Query q = (Query) em.createQuery("select p from Empresa p where p.id = :id");
+            q.setParameter("id", id);
+            return (Empresa) q.getSingleResult();
+        }catch(NoResultException e){
+            return null;
+        }
+    }
     
 }

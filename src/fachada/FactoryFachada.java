@@ -4,10 +4,8 @@ public final class FactoryFachada {
     
     private FactoryFachada(){}
     public static Fachada crear(int tipo){
-        if(tipo==Fachada.ADMINISTRADOR){
-            return new AdministradorFachada();
-        }else if(tipo==Fachada.USUARIO){
-            return new UsuarioFachada();
+        if(tipo==Fachada.EMPRESA){
+            return new EmpresaFachada();
         }else if(tipo==Fachada.PERSONA){
             return new PersonaFachada();
         }

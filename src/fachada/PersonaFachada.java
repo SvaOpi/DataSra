@@ -11,11 +11,33 @@ public class PersonaFachada extends Fachada{
         personaServicio = new PersonaServicio();
     }
     
-    public String hacerLogin(Long cedula, String password){
+    public String crearPersona(Persona vo){
         String resultado = "";
         try{
             abrirConexion();
-            Persona vo = personaServicio.buscarPorCedula(cedula, em);
+            if(personaServicio.buscarPorDocumento(vo.getDocumento(), em)!= null){
+                resultado = "Usuario ya registrado";
+            }else{
+                personaServicio.crearPersona(vo, em);
+                resultado = "Creado";
+                et.commit();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            hacerRollback();
+            resultado = "Error";
+        }finally{
+            cerrarConexion();
+            return resultado;
+        }
+    }
+    
+    
+    public String hacerLogin(String documento, String password){
+        String resultado = "";
+        try{
+            abrirConexion();
+            Persona vo = personaServicio.buscarPorDocumento(documento, em);
             if(vo==null){
                 et.commit();
                 resultado="Usuario invalido";  

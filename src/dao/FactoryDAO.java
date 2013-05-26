@@ -7,10 +7,8 @@ public final class FactoryDAO {
     public static Dao crear(int tipo){
         if(tipo==Dao.PERSONA){
             return new PersonaDAO();
-        }else if(tipo==Dao.ADMINISTRADOR){
-            return new AdministradorDAO();
-        }else if(tipo==Dao.USUARIO){
-            return new UsuarioDAO();
+        }else if(tipo==Dao.EMPRESA){
+            return new EmpresaDAO();
         }else{
             return null;
         }
