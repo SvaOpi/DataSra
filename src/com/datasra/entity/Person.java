@@ -7,7 +7,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "persona")
+@Table(name = "person")
 @Inheritance(strategy= InheritanceType.JOINED)
 public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
