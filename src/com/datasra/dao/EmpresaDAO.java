@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package com.datasra.dao;
 
-import entidad.Empresa;
+import com.datasra.entity.Company;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
@@ -15,21 +15,21 @@ import javax.persistence.Query;
  */
 public class EmpresaDAO extends Dao{
     
-    public Empresa buscarPorNit(Long nit,EntityManager em){
+    public Company buscarPorNit(Long nit,EntityManager em){
         try{
             Query q = (Query) em.createQuery("select p from Empresa p where p.nit = :nit");
             q.setParameter("nit", nit);
-            return (Empresa) q.getSingleResult();
+            return (Company) q.getSingleResult();
         }catch(NoResultException e){
             return null;
         }
     }
 
-    public Empresa buscarPorId(long id, EntityManager em) {
+    public Company buscarPorId(long id, EntityManager em) {
         try{
             Query q = (Query) em.createQuery("select p from Empresa p where p.id = :id");
             q.setParameter("id", id);
-            return (Empresa) q.getSingleResult();
+            return (Company) q.getSingleResult();
         }catch(NoResultException e){
             return null;
         }

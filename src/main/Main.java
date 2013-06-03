@@ -4,8 +4,8 @@
  */
 package main;
 
-import entidad.Persona;
-import fachada.PersonaFachada;
+import com.datasra.entity.Person;
+import com.datasra.facade.PersonaFachada;
 import java.util.Date;
 
 /**
@@ -20,14 +20,13 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         PersonaFachada fachada = new PersonaFachada();
-        Persona vo = new Persona();
-        vo.setCorreo("correo");
-        vo.setDireccion("direccion");
-        vo.setDocumento("123");
-        vo.setFechaMuerte(new Date(2000,10,10));
-        vo.setFechaNacimiento(new Date());
-        vo.setNombre("nombre");
-        vo.setTipoDocumento("CC");
+        Person vo = new Person();
+        vo.setMail("correo");
+        vo.setAddress("direccion");
+        vo.setCedule(123);
+        vo.setDeath(new Date(2000,10,10));
+        vo.setBirth(new Date());
+        vo.setName("nombre");
         String resultado = fachada.crearPersona(vo);
         System.out.println(resultado);
     }

@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package fachada;
+package com.datasra.facade;
 
-import entidad.Empresa;
-import servicio.EmpresaServicio;
+import com.datasra.entity.Company;
+import com.datasra.servicio.EmpresaServicio;
 
 /**
  *

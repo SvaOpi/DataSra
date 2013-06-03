@@ -2,14 +2,8 @@
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
   <persistence-unit name="ggpPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>entidad.Administrador</class>
-    <class>entidad.Persona</class>
-    <class>entidad.Usuario</class>
-    <class>entidad.Canal</class>
-    <class>entidad.Distribuidor</class>
-    <class>entidad.Empresa</class>
-    <class>entidad.PuntoVenta</class>
-    <class>entidad.SubDistribuidor</class>
+    <class>com.datasra.entity.Company</class>
+    <class>com.datasra.entity.Person</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sra_db"/>
       <property name="javax.persistence.jdbc.password" value="root"/>

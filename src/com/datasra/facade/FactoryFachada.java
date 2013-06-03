@@ -1,4 +1,4 @@
-package fachada;
+package com.datasra.facade;
 
 public final class FactoryFachada {
     

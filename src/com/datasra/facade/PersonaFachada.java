@@ -1,7 +1,7 @@
-package fachada;
+package com.datasra.facade;
 
-import entidad.Persona;
-import servicio.PersonaServicio;
+import com.datasra.entity.Person;
+import com.datasra.servicio.PersonaServicio;
 
 public class PersonaFachada extends Fachada{
      
@@ -11,11 +11,11 @@ public class PersonaFachada extends Fachada{
         personaServicio = new PersonaServicio();
     }
     
-    public String crearPersona(Persona vo){
+    public String crearPersona(Person vo){
         String resultado = "";
         try{
             abrirConexion();
-            if(personaServicio.buscarPorDocumento(vo.getDocumento(), em)!= null){
+            if(personaServicio.buscarPorDocumento((int) vo.getCedule(), em)!= null){
                 resultado = "Usuario ya registrado";
             }else{
                 personaServicio.crearPersona(vo, em);
@@ -33,11 +33,11 @@ public class PersonaFachada extends Fachada{
     }
     
     
-    public String hacerLogin(String documento, String password){
+    public String hacerLogin(int documento, String password){
         String resultado = "";
         try{
             abrirConexion();
-            Persona vo = personaServicio.buscarPorDocumento(documento, em);
+            Person vo = personaServicio.buscarPorDocumento(documento, em);
             if(vo==null){
                 et.commit();
                 resultado="Usuario invalido";  

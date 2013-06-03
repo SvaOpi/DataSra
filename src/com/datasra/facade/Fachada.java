@@ -1,4 +1,4 @@
-package fachada;
+package com.datasra.facade;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

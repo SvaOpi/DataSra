@@ -1,4 +1,4 @@
-package dao;
+package com.datasra.dao;
 
 public final class FactoryDAO {
     

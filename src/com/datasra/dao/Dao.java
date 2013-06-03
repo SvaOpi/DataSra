@@ -1,4 +1,4 @@
-package dao;
+package com.datasra.dao;
 
 import javax.persistence.EntityManager;
 
